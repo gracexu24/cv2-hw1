@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CV2 HW1 Output</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 32px;
+        max-width: 1100px;
+      }
+      h1 { margin: 0 0 16px; }
+      h2 {
+        margin: 40px 0 12px;
+        color: #222;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 8px;
+      }
+      h3 { margin: 18px 0 10px; color: #444; }
+      p { color: #444; }
+
+      .hint {
+        margin: 0 0 18px;
+        color: #666;
+        font-size: 13px;
+      }
+      .image-container { margin-bottom: 28px; }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+      }
+      .caption {
+        margin-top: 10px;
+        color: #666;
+        font-size: 14px;
+        line-height: 1.35;
+      }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+  </head>
+  <body>
+    <h1>Grace Xu - Homework 1</h1>
+
+    <h2>Initial Tests</h2>
+    <div class="image-container">
+        <img src="assets/cathedral_simple_aligned.jpg" alt="Simple SSD aligned cathedral output" />
+      </div>
+    <p>I experimented with using Euclidean distance and Normalized Cross-Correlation and found that especially for the smaller images, there was not a lot of difference between the two. I decided to use Euclidean distance becuase it worked better for the multi-scale pyramid alignment. Then I also tested cropping the boarders of the images at varrying amounts. This helped improve my results a lot and I found that 0.07 (percentage of the image) was a good amount to crop the boarders by. I did this before trying to align the images to remove black or discolored boarders.</p>
+    <h2>Simple Alignment</h2>
+    <p>I used Eclidean distance formula and serching a window of [-15,15] pixels to align these images.</p>
+    <div class="image-container">
+      <h3>Cathedral</h3>
+      <img src="assets/cathedral_simple_aligned.jpg" alt="Simple SSD aligned cathedral output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=5, dx=2), Red (dy=12, dx=3)</p>
+    </div>
+    <div class="image-container">
+      <h3>Tobolsk</h3>
+      <img src="assets/tobolsk_simple_aligned.jpg" alt="Simple SSD aligned tobolsk output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=3, dx=3), Red (dy=6, dx=3)</p>
+    </div>
+    <div class="image-container">
+      <h3>Monastery</h3>
+      <img src="assets/monastery_simple_aligned.jpg" alt="Simple SSD aligned monastery output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=-3, dx=2), Red (dy=3, dx=2)</p>
+    </div>
+
+<!--
+    <h2>Simple Alignment (NCC)</h2>
+    <div class="image-container">
+      <h3>Tobolsk</h3>
+      <img src="assets/tobolsk_simple_ncc_aligned.jpg" alt="Simple NCC aligned tobolsk output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=__, dx=__), Red (dy=__, dx=__)</p>
+    </div>
+    <div class="image-container">
+      <h3>Monastery</h3>
+      <img src="assets/monastery_simple_ncc_aligned.jpg" alt="Simple NCC aligned monastery output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=__, dx=__), Red (dy=__, dx=__)</p>
+    </div>
+-->
+
+    <h2>Multi-Scale Pyramid Alignment</h2>
+    <p>I scaled down the images by half until it was less than 400 pixels and then used the Eclidean distance formula to align the images. I then scaled the images back up to the original size and used the offsets to align the images and further refine the alignment.</p>
+    <div class="image-container">
+      <h3>Cathedral</h3>
+      <img src="assets/cathedral_pyramid_aligned.jpg" alt="Pyramid aligned cathedral output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=5, dx=2), Red (dy=12, dx=3)</p>
+    </div>
+    <div class="image-container">
+      <h3>Tobolsk</h3>
+      <img src="assets/tobolsk_pyramid_aligned.jpg" alt="Pyramid aligned tobolsk output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=3, dx=3), Red (dy=6, dx=3)</p>
+    </div>
+    <div class="image-container">
+      <h3>Monastery</h3>
+      <img src="assets/monastery_pyramid_aligned.jpg" alt="Pyramid aligned monastery output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=-3, dx=2), Red (dy=3, dx=2)</p>
+    </div>
+    <div class="image-container">
+      <h3>Melons</h3>
+      <img src="assets/melons_pyramid_aligned.jpg" alt="Pyramid aligned melons output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=82, dx=11), Red (dy=179, dx=13)</p>
+    </div>
+    <div class="image-container">
+      <h3>Church</h3>
+      <img src="assets/church_pyramid_aligned.jpg" alt="Pyramid aligned church output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=25, dx=4), Red (dy=58, dx=-4) </p>
+    </div>
+    <div class="image-container">
+      <h3>Emir</h3>
+      <img src="assets/emir_pyramid_aligned.jpg" alt="Pyramid aligned emir output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=49, dx=24), Red (dy=103, dx=56). This image didn't fully algin properly becuase, as mentioned in the assignment, this image does not have the same brightness values for each channel. I tried using NCC and different search windows and croppings but my current settings produced the best results for all of the images and this one. However, this image still isnt perfectly algined.</p>
+    </div>
+    <div class="image-container">
+      <h3>Harvesters</h3>
+      <img src="assets/harvesters_pyramid_aligned.jpg" alt="Pyramid aligned harvesters output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=60, dx=16), Red (dy=124, dx=13)</p>
+    </div>
+    <div class="image-container">
+      <h3>Icon</h3>
+      <img src="assets/icon_pyramid_aligned.jpg" alt="Pyramid aligned icon output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=41, dx=17), Red (dy=89, dx=23)</p>
+    </div>
+    <div class="image-container">
+      <h3>Italil</h3>
+      <img src="assets/italil_pyramid_aligned.jpg" alt="Pyramid aligned italil output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=38, dx=21), Red (dy=76, dx=35)</p>
+    </div>
+    <div class="image-container">
+      <h3>Lastochikino</h3>
+      <img src="assets/lastochikino_pyramid_aligned.jpg" alt="Pyramid aligned lastochikino output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=-3, dx=-2), Red (dy=75, dx=-9)</p>
+    </div>
+    <div class="image-container">
+      <h3>Lugano</h3>
+      <img src="assets/lugano_pyramid_aligned.jpg" alt="Pyramid aligned lugano output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=41, dx=-17), Red (dy=93, dx=-29)</p>
+    </div>
+    <div class="image-container">
+      <h3>Self Portrait</h3>
+      <img src="assets/self_portrait_pyramid_aligned.jpg" alt="Pyramid aligned self portrait output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=79, dx=29), Red (dy=176, dx=36)</p>
+    </div>
+    <div class="image-container">
+      <h3>Siren</h3>
+      <img src="assets/siren_pyramid_aligned.jpg" alt="Pyramid aligned siren output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=49, dx=-6), Red (dy=96, dx=-25)</p>
+    </div>
+    <div class="image-container">
+      <h3>Three Generations</h3>
+      <img src="assets/three_generations_pyramid_aligned.jpg" alt="Pyramid aligned three generations output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=53, dx=14), Red (dy=112, dx=11)</p>
+    </div>
+
+    <h2>3 Chosen Images</h2>
+    <p>I chose these images of grass because I'm looking forward to warmer weather and touching some grass. I used the same method as the multi-scale pyramid alignment to align these images.</p>
+    <div class="image-container">
+      <h3>Image 1</h3>
+      <img src="assets/ownimage1_pyramid_aligned.jpg" alt="Pyramid aligned own image 1 output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=72, dx=-6), Red (dy=155, dx=-18)</p>
+    </div>
+    <div class="image-container">
+      <h3>Image 2</h3>
+      <img src="assets/ownimage2_pyramid_aligned.jpg" alt="Pyramid aligned own image 2 output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=47, dx=-9), Red (dy=96, dx=-22)</p>
+    </div>
+    <div class="image-container">
+      <h3>Image 3</h3>
+      <img src="assets/ownimage3_pyramid_aligned.jpg" alt="Pyramid aligned own image 3 output" />
+      <p class="caption">Offsets (align to Blue): Green (dy=12, dx=-1), Red (dy=98, dx=-3)</p>
+    </div>
+  </body>
+</html>
