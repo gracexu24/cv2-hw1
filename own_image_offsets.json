@@ -1,0 +1,22 @@
+{
+  "ownimage1.tif": {
+    "green": {
+      "dy": 72,
+      "dx": -6
+    },
+    "red": {
+      "dy": 155,
+      "dx": -17
+    }
+  },
+  "ownimage2.tif": {
+    "green": {
+      "dy": 47,
+      "dx": -9
+    },
+    "red": {
+      "dy": 96,
+      "dx": -22
+    }
+  }
+}

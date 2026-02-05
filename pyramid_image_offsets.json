@@ -1,0 +1,142 @@
+{
+  "cathedral.jpg": {
+    "green": {
+      "dy": 5,
+      "dx": 2
+    },
+    "red": {
+      "dy": 12,
+      "dx": 3
+    }
+  },
+  "tobolsk.jpg": {
+    "green": {
+      "dy": 3,
+      "dx": 3
+    },
+    "red": {
+      "dy": 6,
+      "dx": 3
+    }
+  },
+  "monastery.jpg": {
+    "green": {
+      "dy": -3,
+      "dx": 2
+    },
+    "red": {
+      "dy": 3,
+      "dx": 2
+    }
+  },
+  "melons.tif": {
+    "green": {
+      "dy": 82,
+      "dx": 11
+    },
+    "red": {
+      "dy": 178,
+      "dx": 13
+    }
+  },
+  "church.tif": {
+    "green": {
+      "dy": 25,
+      "dx": 4
+    },
+    "red": {
+      "dy": 62,
+      "dx": 185
+    }
+  },
+  "emir.tif": {
+    "green": {
+      "dy": 49,
+      "dx": 24
+    },
+    "red": {
+      "dy": 103,
+      "dx": 56
+    }
+  },
+  "harvesters.tif": {
+    "green": {
+      "dy": 60,
+      "dx": 16
+    },
+    "red": {
+      "dy": 124,
+      "dx": 13
+    }
+  },
+  "icon.tif": {
+    "green": {
+      "dy": 41,
+      "dx": 17
+    },
+    "red": {
+      "dy": 89,
+      "dx": 23
+    }
+  },
+  "italil.tif": {
+    "green": {
+      "dy": 38,
+      "dx": 21
+    },
+    "red": {
+      "dy": 76,
+      "dx": 35
+    }
+  },
+  "lastochikino.tif": {
+    "green": {
+      "dy": -3,
+      "dx": -2
+    },
+    "red": {
+      "dy": 75,
+      "dx": -9
+    }
+  },
+  "lugano.tif": {
+    "green": {
+      "dy": 41,
+      "dx": -16
+    },
+    "red": {
+      "dy": 93,
+      "dx": -29
+    }
+  },
+  "self_portrait.tif": {
+    "green": {
+      "dy": 79,
+      "dx": 29
+    },
+    "red": {
+      "dy": 176,
+      "dx": 36
+    }
+  },
+  "siren.tif": {
+    "green": {
+      "dy": 49,
+      "dx": -6
+    },
+    "red": {
+      "dy": 96,
+      "dx": -25
+    }
+  },
+  "three_generations.tif": {
+    "green": {
+      "dy": 53,
+      "dx": 14
+    },
+    "red": {
+      "dy": 112,
+      "dx": 11
+    }
+  }
+}

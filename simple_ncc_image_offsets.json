@@ -1,0 +1,32 @@
+{
+  "cathedral.jpg": {
+    "green": {
+      "dy": 5,
+      "dx": 2
+    },
+    "red": {
+      "dy": 12,
+      "dx": 3
+    }
+  },
+  "tobolsk.jpg": {
+    "green": {
+      "dy": 3,
+      "dx": 3
+    },
+    "red": {
+      "dy": 6,
+      "dx": 3
+    }
+  },
+  "monastery.jpg": {
+    "green": {
+      "dy": -3,
+      "dx": 2
+    },
+    "red": {
+      "dy": 3,
+      "dx": 2
+    }
+  }
+}
